@@ -41,14 +41,14 @@
 .boxbutton1 {
   background-color: rgb(208, 238, 184);
   color: rgb(2, 2, 2);
-  border: 10px solid rgb(156, 236, 145);
+  border: 10px solid rgba(67, 67, 68, 0.274);
   font-size: 2em;
 }
 .boxbutton2 {
   background-color: rgba(218, 216, 216, 0.918);
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   color: rgb(2, 2, 2);
-  border: 8px solid rgb(173, 172, 172);
+  border: 4px solid rgb(41, 33, 33);
   font-size: 5em;
 }
 .boxbutton3 {
