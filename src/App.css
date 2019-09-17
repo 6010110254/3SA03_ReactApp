@@ -31,9 +31,22 @@
   margin: 1em;
   user-select: none;
 }
+.boxbutton {
+  background-color: rgb(202, 241, 110);
+  color: rgb(2, 2, 2);
+  border: 10px solid rgb(255, 7, 7);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  font-size: 1.5em;
+}
+.boxbutton1 {
+  background-color: rgb(113, 252, 0);
+  color: rgb(2, 2, 2);
+  border: 10px solid rgb(25, 109, 14);
+  font-size: 3em;
+}
 .activeCard {
 color: rgb(15, 15, 15);
-background: rgb(255, 76, 52);
+background: rgb(251, 255, 4);
 }
 @keyframes App-logo-spin {
   from {

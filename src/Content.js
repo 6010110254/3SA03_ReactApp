@@ -8,21 +8,28 @@ class Content extends Component  {
     super();
     this.state={
       count:0,
-      printtrue:"กะทันหัน",
+      no:0,
+      printtrue: "กะทันหัน",
       printfail:"กระทันหัน",
-      printtrue2:"คำนวณ",
-      printfail2:"คำนวน",
-      printtrue3:"กาลเทศะ",
-      printfail3:"กาละเทศะ",
-      printtrue4:"น้ำแข็งไส",
-      printfail4:"น้ำแข็งใส",
-      printtrue5:"บันเทิง",
-      printfail5:"บรรเทิง",
-      printtrue6:"ผัดไทย",
-      printfail6:"ผัดไท",
-      printtrue7:"อิเล็กทรอนิกส์",
-      printfail7:"อิเล็คทรอนิกส์",
-      random: 0,
+      inputListT:[
+        {printtrue:"คำนวณ"},
+        {printtrue:"กาลเทศะ"},
+        {printtrue:"น้ำแข็งไส"},
+        {printtrue:"บันเทิง"},
+        {printtrue:"ผัดไทย"},
+        {printtrue:"สังเกต"},
+        {printtrue:"อินฟราเรด"},
+        {printtrue:"อิเล็กทรอนิกส์"}],
+        inputListF:[
+          {printfail:"คำนวน"},
+          {printfail:"กาละเทศะ"},
+          {printfail:"น้ำแข็งใส"},
+          {printfail:"บรรเทิง"},
+          {printfail:"ผัดไทย"},
+          {printfail:"สังเกตุ"},
+          {printfail:"อินฟาเรด"},
+          {printfail:"อิเล็คทรอนิกส์"} ],
+    
     }
   
   }
@@ -30,9 +37,9 @@ class Content extends Component  {
   handleClickwin = e => {
     this.setState({
       count: this.state.count + 1,
-      printtrue :this.state.printtrue2,
-      printfail :this.state.printfail2,
-
+      printtrue :this.state.inputListT[this.state.no].printtrue,
+      printfail :this.state.inputListF[this.state.no].printfail,
+      no: this.state.no+1,
     })
     this.shoot();
   }
@@ -41,9 +48,9 @@ class Content extends Component  {
     this.setState({
       count: this.state.count + -1, 
      
-      printtrue :this.state.printtrue2,
-      printfail :this.state.printfail2,
-      
+      printtrue :this.state.inputListT[this.state.no].printtrue,
+      printfail :this.state.inputListF[this.state.no].printfail,
+      no: this.state.no+1,
    
     })
     this.Fail();
@@ -62,29 +69,31 @@ class Content extends Component  {
   }
 
     render() {
+      
 
-      var mystyle={
-        width:100,
-        height:50,
-
-      }
-
+      let className1 = `boxbutton`
+      let className2 = `boxbutton1`
+      
       const m1t = (
-        <button  style={mystyle}  onClick={this.handleClickwin}>{this.state.printtrue}</button>
+        <button  className={className1}  onClick={this.handleClickwin}> {this.state.printtrue}</button>
         
         
       );
       const m1f = (
-        <button   style={mystyle} onClick={this.handleClickloss}>{this.state.printfail} </button>
+        <button   className={className1} onClick={this.handleClickloss}>{this.state.printfail} </button>
         
         
       );
-  
-      return (
-        <div>
 
-         <h1 align="center">{m1f}     {m1t}</h1>
-          <h1>Score : {this.state.count}</h1>
+
+      return (
+        
+       <div>
+   
+         <h1  align="center">{m1f}     {m1t}</h1>
+
+   
+          <h1 className={className2}>Score : {this.state.count}</h1>
   
           </div>
       );
