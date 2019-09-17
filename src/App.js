@@ -11,7 +11,7 @@ class App extends Component {
 
   render() {
     return (
-     <body   background="https://data.ac-illust.com/data/thumbnails/b8/b85aeac77cde8f92aba1342b5e26ddcf_t.jpeg" > 
+     <body  background="https://cdn.pixabay.com/photo/2018/04/26/11/34/silhouette-3351746_960_720.jpg" bgproperties="fixed" > 
       <div>
        <Footer1/>
        <Header/>
