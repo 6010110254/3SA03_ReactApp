@@ -39,9 +39,9 @@
   font-size: 1.75em;
 }
 .boxbutton1 {
-  background-color: rgb(208, 238, 184);
+  background-color: rgb(228, 227, 227);
   color: rgb(2, 2, 2);
-  border: 10px solid rgba(67, 67, 68, 0.274);
+  border: 10px solid rgb(58, 48, 48);
   font-size: 2em;
 }
 .boxbutton2 {
@@ -54,7 +54,7 @@
 .boxbutton3 {
   background-color: rgba(224, 221, 221, 0.87);
   color: rgb(2, 2, 2);
-  border: 10px solid rgb(223, 217, 217);
+  border: 1px solid rgb(223, 217, 217);
   font-size: 4em;
 }
 .boxbutton4 {

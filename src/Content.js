@@ -113,8 +113,10 @@ class Content extends Component  {
          <h1 align="center">
           <button className={className3} > {this.state.status}</button>
           </h1>
+          <br></br>
           <h1 align="center" >
           <button  className={className2} >Score : {this.state.count} </button>
+          <br></br>
           </h1>
           </div>
       );
