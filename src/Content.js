@@ -9,6 +9,7 @@ class Content extends Component  {
     this.state={
       count:0,
       no:0,
+      status:":)",
       printtrue: "กะทันหัน",
       printfail:"กระทันหัน",
       inputListT:[
@@ -25,7 +26,7 @@ class Content extends Component  {
           {printfail:"กาละเทศะ"},
           {printfail:"น้ำแข็งใส"},
           {printfail:"บรรเทิง"},
-          {printfail:"ผัดไทย"},
+          {printfail:"ผัดไท"},
           {printfail:"สังเกตุ"},
           {printfail:"อินฟาเรด"},
           {printfail:"อิเล็คทรอนิกส์"} ],
@@ -37,6 +38,7 @@ class Content extends Component  {
   handleClickwin = e => {
     this.setState({
       count: this.state.count + 1,
+      status :"เก่งมาก :) !",
       printtrue :this.state.inputListT[this.state.no].printtrue,
       printfail :this.state.inputListF[this.state.no].printfail,
       no: this.state.no+1,
@@ -47,10 +49,11 @@ class Content extends Component  {
   handleClickloss = e => {
     this.setState({
       count: this.state.count + -1, 
-     
+      status : "ผิด ! :(",
       printtrue :this.state.inputListT[this.state.no].printtrue,
       printfail :this.state.inputListF[this.state.no].printfail,
       no: this.state.no+1,
+      
    
     })
     this.Fail();
@@ -61,10 +64,11 @@ class Content extends Component  {
  shoot() {
   
     alert("เก่งมาก :) !");
- 
+  
   }
   Fail() {
     alert("ผิด! :(");
+  
     
   }
 
@@ -73,6 +77,7 @@ class Content extends Component  {
 
       let className1 = `boxbutton`
       let className2 = `boxbutton1`
+      let className3 = `boxbutton4`
       
       const m1t = (
         <button  className={className1}  onClick={this.handleClickwin}> {this.state.printtrue}</button>
@@ -91,6 +96,9 @@ class Content extends Component  {
        <div>
    
          <h1  align="center">{m1f}  ?   {m1t}</h1>
+         <h1 align="center">
+          <button className={className3} > {this.state.status}</button>
+          </h1>
           <h1 align="center" >
           <button  className={className2} >Score : {this.state.count} </button>
           </h1>
