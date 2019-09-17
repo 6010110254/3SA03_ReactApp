@@ -91,10 +91,9 @@ class Content extends Component  {
        <div>
    
          <h1  align="center">{m1f}     {m1t}</h1>
-
-   
-          <h1 className={className2}>Score : {this.state.count}</h1>
-  
+          <h1 align="center" >
+          <button  className={className2} >Score : {this.state.count} </button>
+          </h1>
           </div>
       );
     }
