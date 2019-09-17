@@ -19,6 +19,7 @@ export default class CharacterCard extends Component {
             
         }
     }
+
     render(){
         
     let className = `card ${this.state.active ? 'activeCard': ''}`

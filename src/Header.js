@@ -4,7 +4,7 @@ class Header extends Component {
     render() {
       return (
         <div>
-       <h1 align="center">เกมส์ ทายคำศัพท์ สัตว์เลี้ยง </h1>
+       <h1 align="center">เกมส์ ทายคำศัพท์ สัตว์ </h1>
        <h2 align="center">เลือกคำศัพท์ที่ถูกต้องแล้วทำการกดตกลง</h2>
         </div>
       );
