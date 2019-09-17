@@ -11,6 +11,11 @@ class Footer extends Component {
           <h3 > Fadel hayeemareh 6010110254 Setion:01 </h3>
          <h2 > CopyRight 2019 - React</h2>
          <br></br>
+         <br></br>
+         <br></br>
+         <br></br>
+         <br></br>
+         <br></br>
           </div>
       );
     }

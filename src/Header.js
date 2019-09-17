@@ -8,8 +8,13 @@ class Header extends Component {
 
         <div align="center">
        <button className={className1}  >เกมส์ ทายคำที่เขียนถูกต้อง</button>
-       <br></br>
+       <br>
+       </br>
+       <br>
+       </br>
        <button className={className2}  >เลือกคำถูกต้อง</button>
+       <br></br>
+       <br></br>
 
         </div>
       );
