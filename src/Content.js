@@ -5,12 +5,15 @@ import React, { Component } from 'react';
 
 class Content extends Component  {
   constructor(){
+
     super();
     this.state={
       count:0,
       no:0,
+      sco : "Score",
       value: 15,
       los: -4,
+ 
       win: 9,
       status:":)",
       printtrue: "กะทันหัน",
@@ -49,41 +52,51 @@ class Content extends Component  {
           {printfail:"อิเล็คทรอนิกส์"} ],
     
     }
+    
   
   }
 
-  handleClickwin = e => { if( this.state.no  <= this.state.value ) {
+  handleClickwin = e => { if( this.state.no  <= this.state.value && this.state.no  >= 0 ) {
     this.setState({
       count: this.state.count + 1,
       status :"เก่งมาก :) !",
       printtrue :this.state.inputListT[this.state.no].printtrue,
       printfail :this.state.inputListF[this.state.no].printfail,
       no: this.state.no+1, 
+      sco : "Score",
     })
     this.shoot();
-  }if ( this.state.no == this.state.win ){
+  }if ( this.state.count == this.state.win ){
     this.setState({
       status : "You win ^_^ !!",
       no: 0,
       count:0,
-
+      sco:"You win ^_^ !!",
       
    
     })
     this.win();
-  }if ( this.state.no == this.state.los ){
+  }if ( this.state.count == this.state.los ){
     this.setState({
       status : "You Loss T_T !!",
       no: 0,
       count:0,
+      sco:"You Loss T_T !!",
       
    
     })
     this.loss();
-  } }
+  }  if ( this.state.no >= 15 ){
+    this.setState({
+      no: 0, 
+      
+    })
+
+  }
+}
 
 
-  handleClickloss = e => { if( this.state.no  <= this.state.value ) {
+  handleClickloss = e => { if( this.state.no  <= this.state.value  && this.state.no  >= 0 ) {
     this.setState({
       count: this.state.count + -1, 
       status : "ผิด ! :(",
@@ -94,24 +107,32 @@ class Content extends Component  {
    
     })
     this.Fail();
-  }  if ( this.state.no == 10 ){
+  }  if ( this.state.count == 10 ){
     this.setState({
-      status : "You win ^_^ !!",
+      status : "ว้าวว ^_^ !!",
       no: 0,
       count:0,
-      
+      sco:"You win ^_^ !!",
    
     })
     this.win();
   }
-   if ( this.state.no == -5 ){
+   if ( this.state.count == -5 ){
     this.setState({
-      status : "You Loss T_T !!",
+      status : "แย่จัง T_T !!",
       no: 0,
       count:0,
+      sco:"You Loss T_T !!",
    
     })
     this.loss();
+  }  
+  if ( this.state.no >= 15 ){
+    this.setState({
+      no: 0, 
+      
+    })
+
   } }
 
   
@@ -143,6 +164,7 @@ class Content extends Component  {
       let className1 = `boxbutton`
       let className2 = `boxbutton1`
       let className3 = `boxbutton4`
+      let className4 = `boxbutton5`
       
       const m1t = (
         <button  className={className1}  onClick={this.handleClickwin}> {this.state.printtrue}</button>
@@ -151,6 +173,11 @@ class Content extends Component  {
       );
       const m1f = (
         <button   className={className1} onClick={this.handleClickloss}>{this.state.printfail} </button>
+      
+        
+      );    
+        const m2 = (
+        <button   className={className4} >? </button>
         
         
       );
@@ -158,15 +185,16 @@ class Content extends Component  {
 
       return (
         
-       <div>
-   
-         <h1  align="center">{m1f}  ?   {m1t}</h1>
+       <div >
+       
+         <h1   align="center" >{m1f}{m2}{m1t}</h1>
+     
          <h1 align="center">
-          <button className={className3} > {this.state.status}</button>
+          <h2  className={className3} > {this.state.status}</h2>
           </h1>
           <br></br>
           <h1 align="center" >
-          <button  className={className2} >Score : {this.state.count} </button>
+          <button  className={className2} >{this.state.sco} : {this.state.count} </button>
           <br></br>
           </h1>
           </div>

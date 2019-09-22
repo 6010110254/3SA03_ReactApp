@@ -13,7 +13,7 @@ class Header extends Component {
        <br>
        </br>
        <button className={className2}  >เลือกคำถูกต้อง</button>
-       <br></br>
+       <h3> คะแนน "10แต้ม" ถือว่าชนะ และถ้าคะแนน "-5แต้ม" ถือว่าแพ้</h3>
        <br></br>
 
         </div>
