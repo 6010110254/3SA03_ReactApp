@@ -9,6 +9,9 @@ class Content extends Component  {
     this.state={
       count:0,
       no:0,
+      value: 15,
+      los: -4,
+      win: 9,
       status:":)",
       printtrue: "กะทันหัน",
       printfail:"กระทันหัน",
@@ -49,18 +52,38 @@ class Content extends Component  {
   
   }
 
-  handleClickwin = e => {
+  handleClickwin = e => { if( this.state.no  <= this.state.value ) {
     this.setState({
       count: this.state.count + 1,
       status :"เก่งมาก :) !",
       printtrue :this.state.inputListT[this.state.no].printtrue,
       printfail :this.state.inputListF[this.state.no].printfail,
-      no: this.state.no+1,
+      no: this.state.no+1, 
     })
     this.shoot();
-  }
+  }if ( this.state.no == this.state.win ){
+    this.setState({
+      status : "You win ^_^ !!",
+      no: 0,
+      count:0,
 
-  handleClickloss = e => {
+      
+   
+    })
+    this.win();
+  }if ( this.state.no == this.state.los ){
+    this.setState({
+      status : "You Loss T_T !!",
+      no: 0,
+      count:0,
+      
+   
+    })
+    this.loss();
+  } }
+
+
+  handleClickloss = e => { if( this.state.no  <= this.state.value ) {
     this.setState({
       count: this.state.count + -1, 
       status : "ผิด ! :(",
@@ -71,7 +94,25 @@ class Content extends Component  {
    
     })
     this.Fail();
+  }  if ( this.state.no == 10 ){
+    this.setState({
+      status : "You win ^_^ !!",
+      no: 0,
+      count:0,
+      
+   
+    })
+    this.win();
   }
+   if ( this.state.no == -5 ){
+    this.setState({
+      status : "You Loss T_T !!",
+      no: 0,
+      count:0,
+   
+    })
+    this.loss();
+  } }
 
   
  
@@ -82,6 +123,16 @@ class Content extends Component  {
   }
   Fail() {
     alert("ผิด! :(");
+  
+    
+  }
+  win() {
+  
+    alert("เย้ชนะแล้ว :) !");
+  
+  }
+  loss() {
+    alert("เห้อแพ้แล้ว :(");
   
     
   }
