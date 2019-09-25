@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './App.css';
 
 
 
@@ -54,6 +54,9 @@ class Content extends Component  {
     }
     
   
+  }
+  newgame = () => {
+    window.location.reload(false);
   }
 
   handleClickwin = e => { if( this.state.no  <= this.state.value && this.state.no  >= 0 ) {
@@ -192,10 +195,13 @@ class Content extends Component  {
          <h1 align="center">
           <h2  className={className3} > {this.state.status}</h2>
           </h1>
-          <br></br>
+         
           <h1 align="center" >
           <button  className={className2} >{this.state.sco} : {this.state.count} </button>
           <br></br>
+          <br></br>
+          <button id="newgame" className = "boxbutton11" onClick={this.newgame}>NEW GAME</button>
+    
           </h1>
           </div>
       );
